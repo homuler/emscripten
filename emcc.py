@@ -3372,7 +3372,7 @@ function(%(EXPORT_NAME)s) {
       if shared.target_environment_may_be('node'):
         script_url_node = "if (typeof __filename !== 'undefined') _scriptDir = _scriptDir || __filename;"
     src = '''
-var %(EXPORT_NAME)s = (function() {
+var %(EXPORT_NAME)s = (() => {
   var _scriptDir = %(script_url)s;
   %(script_url_node)s
   return (%(src)s);
